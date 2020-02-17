@@ -23,23 +23,61 @@ const catalogue = [
 ];
 
 function countBooks() {
-  // Your code here
+  return catalogue.length;
 }
 
-function checkBook(book) {
-  // Your code here
+
+function checkBook(bookTitle) {
+  for (let i = 0; i < catalogue.length; i++) {
+    const book = catalogue[i];
+    //console.log(book);
+    if (book === bookTitle) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function countBooksByFirstLetter(letter) {
-  // Your code here
+  //variable count placed outside of the loop so that count //increases everytime the loop is run.  
+  let count = 0
+  // loop through catalogue to get book titles 
+  for (i = 0; i < catalogue.length; i++) {
+    // store book titles in variable
+    let bookTitles = catalogue[i];
+    //search for books begining with W
+    if (bookTitles.charAt(0) === letter) {
+      count++
+    }
+  }
+  return count;
+
 }
 
-function countBooksByKeyword(keyword) {
-  // Your code here
+function countBooksByKeyword(Keyword) {
+  //variable count placed outside the loop 
+  let count = 0;
+  // loop through each book and check the keyword 
+  for (let i = 0; i < catalogue.length; i++) {
+    //store keyword in a variable 
+    const bookKeyWord = catalogue[i];
+    if (bookKeyWord.toLowerCase().match(Keyword.toLowerCase())) {
+      count++        //add one to the number of books by the given keyword
+    }
+  }
+  return count;
 }
 
 function getBooksByAuthor(author) {
-  // Your code here
+  //loop through each books in catalogue and check the author 
+  for (i = 0; i < catalogue.length; i++) {
+    //store books in a variable 
+    const books = catalogue[i];
+    if (author === books) {
+      //get books by author
+      getBooksByAuthor;
+    }
+  }
 }
 
 module.exports = {
